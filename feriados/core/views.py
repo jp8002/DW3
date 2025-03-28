@@ -1,7 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+import datetime 
 
+# Create your views here.
+feriados = {"Natal":"25/12",
+            "Canarval":"04/03"}
 def natal(request):
-    return HttpResponse("<center><h1>Não é natal.<h1><center>")
+    today = datetime.datetime.now().strftime("%d/%m")
+    contexo = {"feriado" : ""}
+    
+    for key, value in feriados.items():
+        if (today == value):
+            contexo["feriado"] = key
+            break
+            
+    return render(request, "natal.html", contexo)
 
