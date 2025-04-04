@@ -13,6 +13,6 @@ def natal(request):
         if (today == value):
             contexo["feriado"] = key
             break
-            
+        # import ipdb; ipdb.set_trace()      
     return render(request, "natal.html", contexo)
 
