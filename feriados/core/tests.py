@@ -3,7 +3,7 @@ from core.models import FeriadoModel
 from datetime import datetime
 # Create your tests here.
 
-class NatalTest(TestCase):
+class feriadoTest(TestCase):
     def setUp(self):
         self.resp = self.client.get('/')
         
@@ -11,14 +11,14 @@ class NatalTest(TestCase):
         self.assertEqual(200,self.resp.status_code)
         
     def test_texto(self):
-        self.assertContains(self.resp,'natal')
+        self.assertContains(self.resp,"Feriado")
         
-    def test_template_natal(self):
-        self.assertTemplateUsed(self.resp,'natal.html')
+    def test_template_feriado(self):
+        self.assertTemplateUsed(self.resp,'feriados.html')
 
 class FeriadoModelTest(TestCase):
     def setUp(self):
-        self.feriado = "Natal"
+        self.feriado = "feriado"
         self.mes = 12
         self.dia = 25
         self.cadastro = FeriadoModel(
