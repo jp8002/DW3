@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Feriados</title>
+    </head>
+    <body>
+        <div id="navbar" style="display: inline;">
+            <ul>
+                <li><a href="listar_feriados">Listar feriados</a></li>
+            </ul>
+        </div>
+        {% if feriado %}
+            <h1>Hoje é: {{ nome }}</h1>
+        {% else %}
+            <h1>Não é feriado</h1>
+        {% endif %}
+    </body>
+</html> 
